@@ -1,0 +1,20 @@
+apiVersion: v1 
+kind: Pod 
+
+metadata:
+  name: gitpod
+
+
+spec:
+  containers:
+    - name: cont1
+      image: nginx 
+      volumeMounts:
+        - name: vol1
+          mountPath: /suruchi
+  volumes:
+    - name: vol1
+      gitRepo:
+        repository: https://github.com/suruchive/terraformrepo.git
+        revision: master 
+        directory: .         
